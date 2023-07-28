@@ -24,9 +24,10 @@ end
 
 #midi_chord chord(:c4,:major), sustain: 0.2
 #sleep 8
-midi_chord chord(:c1,:major), sustain: 8.0, port: "midi_through_midi_through_port-0_14_0", channel: 1
+#midi_chord chord(:c1,:major), sustain: 8.0, port: "midi_through_midi_through_port-0_14_0", channel: 1
 
 # e.g. arpeggiate [4,2,3], :d3, :major, [0,1,2,3,4], 4, 80
 #4.times do
-#  midiarpeggiate [4,2,4], :d3, :major, [0,1,2,3], 4, 80
+use_midi_defaults port: "virtual_raw_midi_2-0_virmidi_2-0_24_0"
+midiarpeggiate [4,2,4], :d3, :major, [0,1,2,3], 4, 80
 #end
