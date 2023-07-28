@@ -28,6 +28,6 @@ end
 
 # e.g. arpeggiate [4,2,3], :d3, :major, [0,1,2,3,4], 4, 80
 #4.times do
-use_midi_defaults port: "virtual_raw_midi_2-0_virmidi_2-0_24_0"
+use_midi_defaults port: "virtual_raw_midi_2-0_virmidi_2-0_24_0", channel: 1
 midiarpeggiate [4,2,4], :d3, :major, [0,1,2,3], 4, 80
 #end
