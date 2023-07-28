@@ -29,12 +29,12 @@ end
 # e.g. arpeggiate [4,2,3], :d3, :major, [0,1,2,3,4], 4, 80
 #4.times do
 
-in_thread(name: :piano)
+in_thread(name: :piano) do
 use_midi_defaults port: "midi_through_midi_through_port-0_14_0", channel: 1
 midiarpeggiate [4,2,4], :d3, :major, [0,1,2,3], 4, 80
 end
 
-in_thread(name: :banjo)
+in_thread(name: :banjo) do
 use_midi_defaults port: "midi_through_midi_through_port-0_14_0", channel: 3
 midiarpeggiate [4,2,4], :a4, :major, [0,1,2,3], 4, 80
 end
