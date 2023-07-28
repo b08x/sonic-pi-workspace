@@ -22,8 +22,9 @@ live_loop :met do
   end
 end
 
-midi_chord chord(:c4,:major), sustain:0.2
+midi_chord chord(:c4,:major), sustain: 0.2
+
 # e.g. arpeggiate [4,2,3], :d3, :major, [0,1,2,3,4], 4, 80
-4.times do
-  midiarpeggiate [4,2,4], :d3, :major, [0,1,2,3], 4, 80
-end
+#4.times do
+#  midiarpeggiate [4,2,4], :d3, :major, [0,1,2,3], 4, 80
+#end
