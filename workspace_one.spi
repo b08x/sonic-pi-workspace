@@ -335,9 +335,6 @@ def merge_sort(list: DEFAULT_LIST_MERGE, side: nil, sorted: DEFAULT_SORTED, run_
 end
 
 
-# Uncomment this if you want to add a path to your own samples.
-# PATH = ""
-
 # This function allows you to create unsorted lists of values of given length
 # based on given ring.
 def generate_list(scale:, length: 16, seed: rrand_i(1, 1000000))
