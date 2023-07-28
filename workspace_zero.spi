@@ -23,6 +23,8 @@ live_loop :met do
 end
 
 midi_chord chord(:c4,:major), sustain: 0.2
+sleep 1
+midi_chord chord(:d3,:major), sustain: 0.2
 
 # e.g. arpeggiate [4,2,3], :d3, :major, [0,1,2,3,4], 4, 80
 #4.times do
