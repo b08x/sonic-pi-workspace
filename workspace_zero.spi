@@ -30,5 +30,6 @@ end
 #4.times do
 use_midi_defaults port: "midi_through_midi_through_port-0_14_0", channel: 1
 midiarpeggiate [4,2,4], :d3, :major, [0,1,2,3], 4, 80
-midiarpeggiate [4,2,4], :a3, :major, [0,1,2,3], 4, 80
+use_midi_defaults port: "midi_through_midi_through_port-0_14_0", channel: 3
+midiarpeggiate [4,2,4], :a4, :major, [0,1,2,3], 4, 80
 #end
