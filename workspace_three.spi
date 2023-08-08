@@ -11,12 +11,14 @@ with_fx :echo, phase: 0.25, mix: 0.2 do
 end
 
 live_loop :snare do
-  stop
+  
+  sync :plips
   sample :bd_boom, amp: 0.9 if (ring 1,0,1,0,0,0,1,0).tick == 1
   sleep 0.5
 end
 
 live_loop :riff do
+  
   use_synth :beep
   use_octave -3
   use_synth_defaults sustain: 0, release: 0.3, amp: 0.8
