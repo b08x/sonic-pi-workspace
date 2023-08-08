@@ -1,0 +1,7 @@
+# Welcome to Sonic Pi
+
+live_loop :test do
+  use_synth :beep
+  play 32, attack: 0.25, sustain: 0.5, release: 0.25
+  sleep 1
+end
