@@ -1,84 +1,23 @@
-#Generator
-#More selfmodulating generative music.
-#Coded by Davids Fiddle
+#The Man Machine
 
-use_random_seed 1867548545
-root = :d3
-type = '9sus4'
-synth = :piano
-row1 = [*(chord root, type, num_octaves: 2).take(8)]
-row2 = row1
-row3 = row1
-tim1 = [0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]
-tim2 = tim1
-tim3 = tim1
-mod1 = [0,0,0,0,0,0,0,1]
-mod2 = mod1
-mod3 = mod1
-stop_time = rand_i(60)+60
+use_bpm 86
 
 
-use_bpm 90
-
-live_loop :metronome do
-  use_synth synth
-  play root + 24
-  sleep 1
-  if vt > stop_time
-    stop if one_in(5)
+with_fx :echo, phase: 0.25, mix: 0.2 do
+  live_loop :plips do
+    sample :elec_plip, rate: 1.1 if (ring 1,1,1,1,1,0,1,1,1,0,1,0,1,1,0,0).tick == 1
+    sleep 0.25
   end
 end
 
-live_loop :minimal1 do
-  use_synth synth
-  tick
-  play row1.ring.look, amp: 0.5
-  if mod1.ring.look == 1
-    if one_in(3)
-      mod1 = mod1.shuffle
-      tim1[rand_i(8)] = (ring 0.5,0.25,0.75,1).choose
-      row1[rand_i(8)] = (chord root, type, num_octaves: 3).choose
-      puts row1
-    end
-  end
-  sleep tim1.ring.look
-  if vt > stop_time
-    stop if one_in(10)
-  end
+live_loop :snare do
+  sample :elec_mid_snare, amp: 0.7 if (ring 1,0,1,0,0,0,1,0).tick == 1
+  sleep 0.5
 end
 
-live_loop :minimal2 do
-  use_synth synth
-  tick
-  play row2.ring.look, pan: 0.8, amp: 0.5
-  if mod2.ring.look == 1
-    if one_in(3)
-      mod2 = mod1.shuffle
-      tim2[rand_i(8)] = (ring 0.5,0.25,0.75,1).choose
-      row2[rand_i(8)] = (chord root, type, num_octaves: 3).choose
-      puts row2
-    end
-  end
-  sleep tim2.ring.look
-  if vt > stop_time
-    stop if one_in(10)
-  end
-end
-
-live_loop :minimal3 do
-  use_synth synth
-  tick
-  play row3.ring.look, pan: -0.8, amp: 0.5
-  if mod3.ring.look == 1
-    if one_in(3)
-      mod2 = mod1.shuffle
-      tim3[rand_i(8)] = (ring 0.5,0.25,0.75,1).choose
-      row3[rand_i(8)] = (chord root, type, num_octaves: 3).choose
-      puts row3
-    end
-  end
-  sleep tim3.ring.look
-  if vt > stop_time
-    stop if one_in(10)
-  end
+live_loop :riff do
+  use_synth :prophet
+  use_synth_defaults sustain: 0, release: 0.3, amp: 0.8
+  play (ring :g4,:g5,:g4,:g5,:fs5,:r,:e5,:fs5,:g5,:r,:fs5,:g5,:a5,:r,:r,:r).tick
+  sleep 0.25
 end
