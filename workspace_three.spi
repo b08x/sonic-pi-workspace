@@ -11,7 +11,7 @@ with_fx :echo, phase: 0.25, mix: 0.2 do
 end
 
 live_loop :snare do
-  sample :elec_mid_snare, amp: 0.7 if (ring 1,0,1,0,0,0,1,0).tick == 1
+  sample :bd_boom, amp: 0.7 if (ring 1,0,1,0,0,0,1,0).tick == 1
   sleep 0.5
 end
 
