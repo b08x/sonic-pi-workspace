@@ -8,7 +8,7 @@ define :cymbal do
   dec = 0.1  #Decay time
   rel = 0.3  #Release time, slightly randomised
   res = 0.9  #Resonance of the lpf
-  cut1 = 120  #Initial pitch of the cutoff
+  cut1 = 80  #Initial pitch of the cutoff
   cut2 = 2  #Amount of cutoff fall
   fall = 0.2  #Time for the cutoff fall
   bounce = 0.3  #Level between decay and release.
