@@ -14,7 +14,7 @@ define :cymbal do
   bounce = 0.3  #Level between decay and release.
   with_fx :rlpf,cutoff: cut1, cutoff_slide: fall, res: res do |f0|
     synth (ring :noise,:gnoise,:bnoise,:pnoise,:cnoise)[source],
-      decay: dec, sustain_level: bounce, sustain: 0, release: (line rel,rel * 1.5).choose
+      decay: dec, sustain_level: bounce, sustain: 0, release: (line rel,rel * 1.5).choose, amp: 0.3
     control f0, cutoff: cut1 - cut2
   end
 end
