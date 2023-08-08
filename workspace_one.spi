@@ -22,7 +22,7 @@ end
 define :drum do
   #Control values:
   wave = 1  #Select the wave type
-  cut = 90  #Cutoff pitch for the lpf. 40-60 for kick, 60-100 for snare & toms.
+  cut = 40  #Cutoff pitch for the lpf. 40-60 for kick, 60-100 for snare & toms.
   pitch = 45  #Initial pitch of the drum. 40-60 for all drums.
   tension = 4 #Amount of pitch fall. 20-40 for kick, <10 for snare & toms.
   fall = 0.05  #Time for the pitch fall. Should be the same as decay.
