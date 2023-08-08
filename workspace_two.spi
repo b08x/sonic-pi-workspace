@@ -14,7 +14,7 @@ live_loop :beat do
   sample :bd_klub
   sample (knit :glitch_robot1,6,:glitch_robot2,1).look,
     cutoff: (line low,high,steps: 16).mirror.look, onset: 2
-  sleep 0.25
+  sleep 0.5
 end
 
 in_thread do #control cutoff
