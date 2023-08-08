@@ -13,7 +13,7 @@ end
 live_loop :snare do
   sync :plips
   sample :bd_boom, amp: 0.9 if (ring 1,0,1,0,0,0,1,0).tick == 1
-  sleep 1
+  sleep 0.5
 end
 
 live_loop :riff do
