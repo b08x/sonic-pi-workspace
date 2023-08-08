@@ -3,6 +3,8 @@
 #Robot
 #Coded by Davids Fiddle
 
+# https://github.com/DavidsFiddle/Sonic-Pi-Code-Bits/blob/master/Beats/Robot
+
 low = 60
 high = 120
 use_bpm 60
