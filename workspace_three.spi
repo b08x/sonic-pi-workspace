@@ -16,7 +16,7 @@ live_loop :snare do
 end
 
 live_loop :riff do
-  use_synth :prophet
+  use_synth :beep
   use_synth_defaults sustain: 0, release: 0.3, amp: 0.8
   play (ring :g4,:g5,:g4,:g5,:fs5,:r,:e5,:fs5,:g5,:r,:fs5,:g5,:a5,:r,:r,:r).tick
   sleep 0.25
