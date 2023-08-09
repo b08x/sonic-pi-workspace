@@ -5,3 +5,4 @@ live_loop :test do
   play 42, attack: 0.5, sustain: 0.5, release: 0.25
   sleep 1
 end
+$
