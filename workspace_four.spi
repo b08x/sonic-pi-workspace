@@ -12,6 +12,7 @@ rearranged_matrix = min_distance_matrix.transpose
 
 # Step 3: Live Loop Rendering
 live_loop :chord_sequence do
+  use_octave -2
   with_fx :reverb, mix: 0.5 do
     rearranged_matrix.each do |row|
       synth :beep, note: row.first, release: 1.5, attack: 0.2
