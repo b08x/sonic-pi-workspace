@@ -36,7 +36,7 @@ live_loop :spatial_effects do
       lfo_value = Math.sin(2 * Math::PI * 0.25 * tick)
       volume = 0.8 + (lfo_value * 0.2)
       synth :pluck, note: row.first, release: 0.8, amp: volume
-      sleep 1.5
+      sleep 0.5
     end
   end
 end
