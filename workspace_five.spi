@@ -1,5 +1,6 @@
 # Welcome to Sonic Pi
-
+use_bpm :link
+set_link_bpm! 60
 # Step 1: Choose Chords with Variation
 chords = [(chord :C, :major),
           (chord :A, :minor),
