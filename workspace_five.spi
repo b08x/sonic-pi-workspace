@@ -34,7 +34,7 @@ end
 
 # Additional Variation: Spatial Effects
 live_loop :spatial_effects do
-  with_fx :pan, pan: -1 + ((Math.sin(2 * Math::PI * 0.15 * tick)) /3 ), amp: 0.8 do
+  with_fx :pan, pan: -1 + ((Math.sin(2 * Math::PI * 0.15 * tick)) /6 ), amp: 0.8 do
     rearranged_matrix.each do |row|
       lfo_value = Math.sin(2 * Math::PI * 0.25 * tick)
       volume = 0.8 + (lfo_value * 0.2)
