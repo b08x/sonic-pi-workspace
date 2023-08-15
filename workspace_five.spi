@@ -7,7 +7,10 @@ chords = [(chord :C, :major),
           (chord :F, :maj9)]    # Added variation - major 9th chord
 
 # Step 2: Create and Rearrange Matrix (Similar to Previous Script)
-
+# Step 2: Create and Rearrange Matrix
+notes_matrix = chords.map { |chord| chord.to_a }
+min_distance_matrix = notes_matrix.transpose.map { |column| column.permutation.to_a.min_by { |perm| perm.each_cons(2).sum { |a, b| (a - b).abs } } }
+rearranged_matrix = min_distance_matrix.transpose
 # Step 3: Live Loop Rendering with Variation
 live_loop :chord_sequence do
   with_fx :reverb, mix: 0.5 do
