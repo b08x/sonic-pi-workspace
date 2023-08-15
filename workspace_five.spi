@@ -1,3 +1,40 @@
 # Welcome to Sonic Pi
 
-print (chord :c, '7-9').take(3)
+# Step 1: Choose Chords with Variation
+chords = [(chord :C, :major),
+          (chord :A, :minor),
+          (chord :E, :minor7),  # Added variation - minor 7th chord
+          (chord :F, :maj9)]    # Added variation - major 9th chord
+
+# Step 2: Create and Rearrange Matrix (Similar to Previous Script)
+
+# Step 3: Live Loop Rendering with Variation
+live_loop :chord_sequence do
+  with_fx :reverb, mix: 0.5 do
+    rearranged_matrix.each do |row|
+      # Apply Note Inversions for Variation
+      notes_with_variation = row.shuffle
+      
+      # Apply Rhythmic Variations for Variation
+      rhythm_variation = [0.75, 0.5, 0.25].choose
+      notes_with_variation.each do |note|
+        synth :hollow, note: note, release: 1.5, attack: 0.2
+        sleep rhythm_variation
+      end
+    end
+  end
+end
+
+# Step 4: Articulation with LFO Modulation (Similar to Previous Script)
+
+# Additional Variation: Spatial Effects
+live_loop :spatial_effects do
+  with_fx :pan, pan: -1 + (Math.sin(2 * Math::PI * 0.15 * tick)), amp: 0.8 do
+    rearranged_matrix.each do |row|
+      lfo_value = Math.sin(2 * Math::PI * 0.25 * tick)
+      volume = 0.8 + (lfo_value * 0.2)
+      synth :pluck, note: row.first, release: 0.8, amp: volume
+      sleep 1.5
+    end
+  end
+end
