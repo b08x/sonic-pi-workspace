@@ -28,9 +28,8 @@ live_loop :articulated_sequence do
       volume = 0.8 + (lfo_value * 0.2) # Modulating volume with LFO
       2.times do
         synth :pluck, note: row.first, release: 0.8, amp: volume
-        sleep 1.5
-        end
+        sleep 0.5
       end
     end
   end
-  
+end
