@@ -1,6 +1,6 @@
 # Welcome to Sonic Pi
 # Step 1: Choose Chords
-chords = [(chord :C, '7sus2'),
+chords = [(chord :C, '6'),
           (chord :D, :minor),
           (chord :E, :minor),
           (chord :F, :major)]
