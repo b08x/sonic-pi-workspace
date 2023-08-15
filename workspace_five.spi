@@ -1,0 +1,3 @@
+# Welcome to Sonic Pi
+
+print chord :c '7-9'
