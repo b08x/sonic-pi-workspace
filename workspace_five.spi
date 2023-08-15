@@ -4,7 +4,7 @@
 chords = [(chord :C, :major),
           (chord :A, :minor),
           (chord :E, :minor7).take(3),  # Added variation - minor 7th chord
-          (chord :F, :maj9)]    # Added variation - major 9th chord
+          (chord :F, :maj9).take(3)]    # Added variation - major 9th chord
 
 # Step 2: Create and Rearrange Matrix (Similar to Previous Script)
 # Step 2: Create and Rearrange Matrix
