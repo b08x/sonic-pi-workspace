@@ -1,6 +1,6 @@
 # Welcome to Sonic Pi
 # Step 1: Choose Chords
-chords = [chord :c, '7-9').take(3),
+chords = [(chord :c, '7-9').take(3),
           (chord :D, :minor),
           (chord :E, :minor),
           (chord :F, :major)]
