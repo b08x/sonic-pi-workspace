@@ -30,7 +30,6 @@ live_loop :chord_sequence do
   end
 end
 
-# Step 4: Articulation with LFO Modulation (Similar to Previous Script)
 live_loop :spatial_effects do
   with_fx :pan, pan: calculate_pan(tick), amp: 0.8 do
     rearranged_matrix.each do |row|
@@ -46,5 +45,6 @@ define :calculate_pan do |tick_value|
   pan_range = -1..1
   lfo_value = Math.sin(2 * Math::PI * 0.15 * tick_value)
   normalized_lfo = lfo_value / 60.0
-  normalized_lfo * (pan_range.max - pan_range.min) + pan_range.min
+  pan_value = normalized_lfo * (pan_range.max - pan_range.min) + pan_range.min
+  [pan_range.min, [pan_value, pan_range.max].min].max
 end
