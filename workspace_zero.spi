@@ -41,17 +41,21 @@ end
 #  midiarpeggiate [4,2,4], :d4, :minor, [0,1,2,3], 4, 80
 #end
 
-live_loop :beat01 do
-  #sync :noise
-  with_fx :band_eq, freq: 44, res: 0.1, db: 20 do
-    with_fx :panslicer, smooth: 0.25, wave: 3 do
-      with_fx :reverb, room: 0.1 do
-        sample :bd_808, pre_amp: 1, lpf: 40
-        sleep 0.25
-        sample :bd_808, pre_amp: 1, lpf: 40
-        sleep 3.75
-      end
+live_loop :squelch do
+  #sync :beat01
+  n = (ring :f1, :g1, :a1).tick
+  4.times do
+    1.times do
+      play n, release: 0.125, cutoff: 100, res: 0.8, wave: 0
     end
+    sleep 0.125
+    3.times do
+      play n, release: 0.125, cutoff: 100, res: 0.8, wave: 0
+    end
+    sleep 1
   end
+
+
+  #sleep 0.25
 end
 #end
