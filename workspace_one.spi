@@ -16,5 +16,8 @@ live_loop :hatz do
 end
 live_loop :kik do
   sync :beat
-  sample :bd_haus
-end
+  2.times do
+    sample :bd_haus
+    sleep 1
+    end
+  end
