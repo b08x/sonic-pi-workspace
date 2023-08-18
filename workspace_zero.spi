@@ -46,9 +46,9 @@ live_loop :beat01 do
   with_fx :band_eq, freq: 44, res: 0.1, db: 20 do
     with_fx :panslicer, smooth: 0.25, wave: 3 do
       with_fx :reverb, room: 1 do
-        sample :bd_808, pre_amp: 1.5, lpf: 40
+        sample :bd_808, pre_amp: 1, lpf: 40
         sleep 0.25
-        sample :bd_808, pre_amp: 1.5, lpf: 40
+        sample :bd_808, pre_amp: 1, lpf: 40
         sleep 3.75
       end
     end
