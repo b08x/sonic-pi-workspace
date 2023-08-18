@@ -20,7 +20,8 @@ end
 live_loop :kik do
   sync :beat
   2.times do
-    sample :bd_haus
+    #sample :bd_haus
+    sample COLLECTIONS, "RC_Kick_01_DurtyC"
     sleep 0.25
   end
 end
