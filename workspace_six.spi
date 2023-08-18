@@ -40,7 +40,7 @@ end
 
 
 solenoids = "/home/b08x/Library/sounds/collections/lower_sound_objects/"
-use_bpm 30
+use_bpm 45
 
 live_loop :solenoid1 do
   sample solenoids, "RC_01_82bpm_Break_Fungus.flac", beat_stretch: 4, amp: 2, onset: 2
