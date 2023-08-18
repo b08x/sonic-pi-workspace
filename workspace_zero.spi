@@ -45,16 +45,16 @@ live_loop :squelch do
   #sync :beat01
   n = (ring :f2, :g2, :a2).tick
   density 2 do
-  4.times do
-    1.times do
-      play n, release: 0.125, cutoff: 100, res: 0.8, wave: 0
+    4.times do
+      1.times do
+        play n, release: 0.25, cutoff: 100, res: 0.8, wave: 0
+      end
+      sleep 0.125
+      3.times do
+        play n, release: 0.25, cutoff: 100, res: 0.8, wave: 0
+      end
+      sleep 1
     end
-    sleep 0.125
-    3.times do
-      play n, release: 0.125, cutoff: 100, res: 0.8, wave: 0
-    end
-    sleep 1
-  end
   end
   
   #sleep 0.25
