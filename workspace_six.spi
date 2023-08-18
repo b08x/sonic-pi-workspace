@@ -58,7 +58,7 @@ live_loop :solenoid2 do
   samplename = ["RC_Kick_01_DurtyC.flac", "RC_Kick_04_DurtyC.flac", "RC_Kick_21_Fungus.flac"].choose
   time = [0.25, 0.5, 0.75].choose
   sample solenoids, samplename, amp: 1.5, rate: 2, pan: rrand(-0.8, 0.8)
-  sleep time
+  sleep 1
 end
 
 with_fx :reverb do
