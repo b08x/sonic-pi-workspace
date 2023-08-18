@@ -18,6 +18,6 @@ live_loop :kik do
   sync :beat
   2.times do
     sample :bd_haus
-    sleep 1
-    end
+    sleep 0.5
   end
+end
