@@ -25,7 +25,7 @@ live_loop :amen_slice2 do
 end
 
 live_loop :amen_slice3 do
-  #stop
+  stop
   sample :loop_amen, attack: 0.0125, release: 0.0125, num_slices: 16, slice: (range 0,16).choose
   sleep 0.125
 end
@@ -43,7 +43,7 @@ solenoids = "/home/b08x/Library/sounds/collections/lower_sound_objects/"
 use_bpm 30
 
 live_loop :solenoid1 do
-  sample solenoids, "RC_01_82bpm_Break_Fungus.flac", beat_stretch: 4, amp: 2
+  sample solenoids, "RC_01_82bpm_Break_Fungus.flac", beat_stretch: 4, amp: 2, onset: 2
   sleep 4
 end
 
