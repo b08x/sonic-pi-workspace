@@ -55,5 +55,5 @@ live_loop :kick_drum do
 end
 
 #sleep 0.25
-
+$
 #end
