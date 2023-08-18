@@ -40,20 +40,17 @@ end
 #  midiarpeggiate [4,2,4], :a4, :major, [0,1,2,3], 4, 80
 #  midiarpeggiate [4,2,4], :d4, :minor, [0,1,2,3], 4, 80
 #end
+  live_loop :kick_drum do
 
-live_loop :squelch do
-  #sync :beat01
-  n = (ring :f2, :g2, :a2).tick
-  density 2 do
-    4.times do
-      1.times do
-        play n, release: 0.25, cutoff: 100, res: 0.8, wave: 0
-      end
-      sleep 0.125
-      3.times do
-        play n, release: 0.25, cutoff: 100, res: 0.8, wave: 0
-      end
+    loop do
+      sample :bd_boom, rate: 0.5
+      sleep 0.75
+      play 32
+      sleep 0.75
+      sample :drum_tom_lo_soft
       sleep 1
+      sample :drum_tom_lo_soft
+      sleep 1.5
     end
   end
   
