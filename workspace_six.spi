@@ -1,0 +1,70 @@
+# Welcome to Sonic Pi
+
+live_loop :amen do
+  stop
+  #sample :loop_amen, beat_stretch: 2, amp: 0.75
+  sample :loop_amen, beat_stretch: 4, amp: 0.75, start: 0.25
+  #sample :loop_amen, beat_stretch: 4, amp: 0.75, start: 0, finish: 0.25
+  at [0,1] do
+    sample :loop_amen, beat_stretch: 1, amp: 0.25
+  end
+  
+  sleep 2
+end
+
+live_loop :amen_slice1 do
+  stop
+  sample :loop_amen, num_slices: 8, slice: (range 0,8).choose
+  sleep 0.25
+end
+
+live_loop :amen_slice2 do
+  stop
+  sample :loop_amen, num_slices: 8, attack: 0.025, release: 0.025, slice: (line 0,8, steps: 8).choose
+  sleep 0.25
+end
+
+live_loop :amen_slice3 do
+  stop
+  sample :loop_amen, attack: 0.0125, release: 0.0125, num_slices: 16, slice: (range 0,16).choose
+  sleep 0.125
+end
+
+live_loop :amen_onset do
+  stop
+  with_swing 0.025, pulse: 3 do
+    sample :loop_amen, onset: pick
+  end
+  sleep 0.25
+end
+
+
+solenoids = "/home/b08x/Library/sounds/collections/lower_sound_objects/"
+use_bpm 45
+
+live_loop :solenoid1 do
+  stop
+  sample solenoids, "RC_01_82bpm_Break_Fungus.flac", beat_stretch: 4, amp: 2, onset: 2
+  sleep 4
+end
+
+live_loop :kick do
+  stop
+  sample :bd_haus, rate: 0.8, amp: 2
+  sleep 1
+end
+
+live_loop :solenoid2 do
+  samplename = ["RC_Kick_01_DurtyC.flac", "RC_Kick_04_DurtyC.flac", "RC_Kick_21_Fungus.flac"].choose
+  time = [0.25, 0.5, 0.75].choose
+  sample solenoids, samplename, amp: 1.5, rate: 1, pan: rrand(-0.8, 0.8)
+  sleep 1
+end
+
+with_fx :reverb do
+  live_loop :solenoid3 do
+    sleep 2
+    sample solenoids, "RC_Kick_02_Fungus.flac", rate: (ring 0.5, 0.55, 0.6, 0.65).tick, amp: 1.5
+    sleep 2
+  end
+end
