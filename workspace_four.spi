@@ -1,0 +1,36 @@
+# Welcome to Sonic Pi
+# Step 1: Choose Chords
+chords = [(chord :c, '7-9').take(3),
+          (chord :D, :minor),
+          (chord :E, :minor),
+          (chord :F, :major)]
+
+# Step 2: Create and Rearrange Matrix
+notes_matrix = chords.map { |chord| chord.to_a }
+min_distance_matrix = notes_matrix.transpose.map { |column| column.permutation.to_a.min_by { |perm| perm.each_cons(2).sum { |a, b| (a - b).abs } } }
+rearranged_matrix = min_distance_matrix.transpose
+
+# Step 3: Live Loop Rendering
+live_loop :chord_sequence do
+  use_octave -2
+  with_fx :reverb, mix: 0.5 do
+    rearranged_matrix.each do |row|
+      synth :beep, note: row.first, release: 0.125, attack: 0.2
+      sleep 0.5
+    end
+  end
+end
+
+# Step 4: Articulation with LFO Modulation
+live_loop :articulated_sequence do
+  with_fx :level, amp: 1.5 do
+    rearranged_matrix.each do |row|
+      lfo_value = Math.sin(2 * Math::PI * 0.25 * tick)
+      volume = 0.8 + (lfo_value * 0.2) # Modulating volume with LFO
+      2.times do
+        synth :pluck, note: row.first, release: 0.8, amp: volume
+        sleep 0.5
+      end
+    end
+  end
+end
