@@ -5,7 +5,7 @@ use_sample_bpm :loop_electric
 
 with_fx :slicer, pulse_width: 0.75, phase: 0.315, wave: 1, smooth: 0.1 do
   live_loop :beat do
-    sample :loop_electric
+    sample :loop_electric, amp: 0.7
     sleep 1
   end
 end
