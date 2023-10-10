@@ -27,7 +27,7 @@ define :switch_key do |current_key|
 end
 
 # Method to play a chord based on the current key
-define :play_chord do |key|
+define :play_thing do |key|
   notes = [key_to_note[key], key_to_note[key] + 4, key_to_note[key] + 7] # Simple major chord
   play notes
 end
