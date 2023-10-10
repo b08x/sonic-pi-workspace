@@ -1,0 +1,80 @@
+# Welcome to Sonic Pi
+# Define the keys and their transition probabilities using a Markov chain
+key_transitions = {
+  "C" => { "C" => 0.2, "D" => 0.3, "E" => 0.2, "F" => 0.1, "G" => 0.1, "A" => 0.1 },
+  "D" => { "C" => 0.1, "D" => 0.2, "E" => 0.3, "F" => 0.1, "G" => 0.2, "A" => 0.1 },
+  "E" => { "C" => 0.1, "D" => 0.1, "E" => 0.2, "F" => 0.3, "G" => 0.2, "A" => 0.1 },
+  "F" => { "C" => 0.2, "D" => 0.1, "E" => 0.1, "F" => 0.2, "G" => 0.3, "A" => 0.1 },
+  "G" => { "C" => 0.1, "D" => 0.2, "E" => 0.1, "F" => 0.2, "G" => 0.2, "A" => 0.2 },
+  "A" => { "C" => 0.1, "D" => 0.1, "E" => 0.1, "F" => 0.2, "G" => 0.2, "A" => 0.3 }
+}
+# Define the keys and their corresponding MIDI note values
+key_to_note = {
+  "C" => 60,
+  "D" => 62,
+  "E" => 64,
+  "F" => 65,
+  "G" => 67,
+  "A" => 69,
+  "B" => 71
+}
+
+# Method to switch key based on Markov chain
+define :switch_key do |current_key|
+  transitions = key_transitions[current_key]
+  new_key = transitions.max_by { |_, probability| rand ** (1.0 / probability) }.first
+  return new_key
+end
+
+# Method to play a syncopated chord based on the current key
+define :play_syncopated_chord do |key|
+  # Play the chord in the original octave
+  play_thing key
+  sleep 1
+end
+
+# Method to play a chord based on the current key
+define :play_thing do |key|
+  # Define a simple major chord
+  notes = [key_to_note[key], key_to_note[key] + 4, key_to_note[key] + 7]
+  
+  # Play the chord notes in different octaves
+  notes.each do |note|
+    play note, release: 0.3
+    sleep 0.1
+  end
+end
+
+# Example usage: play a chord progression with key changes for multiple voices
+live_loop :chord_progression do
+  current_key = "A" # Start with the key of A for the first voice
+  8.times do
+    play_syncopated_chord current_key
+    sleep 1
+    current_key = switch_key(current_key) # Switch to a new key
+  end
+end
+
+live_loop :second_voice do
+  pattern = [nil, nil, "E", "A", "A", "G", "B", "A"] # Second voice pattern
+  pattern.each do |note|
+    if note
+      play key_to_note[note], release: 0.3
+    else
+      sleep 1
+    end
+    sleep 0.5
+  end
+end
+
+live_loop :third_voice do
+  pattern = [nil, nil, nil, "C", "D", "E", "G", "C"] # Third voice pattern
+  pattern.each do |note|
+    if note
+      play key_to_note[note], release: 0.3
+    else
+      sleep 1
+    end
+    sleep 0.5
+  end
+end
