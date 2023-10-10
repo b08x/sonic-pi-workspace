@@ -25,6 +25,7 @@ live_loop :kik do
     2.times do
       sample "/home/b08x/Library/sounds/jams/ai_jams/eclectic_acoustic_hip_hop_polyrhymthmic_beats.ogg", onset: (range 5, 16).tick, amp: 2.5, beat_stretch: 4
       sleep 0.25
-      end
     end
+    sleep 0.125
   end
+end
