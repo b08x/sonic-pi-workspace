@@ -28,7 +28,7 @@ live_loop :chord_progression do
 end
 
 # Method to play a chord based on the current key
-define :play_chord do |key|
+define :play_thing do |key|
   # This is a basic example, you can replace it with a more sophisticated chord progression
   play chord(key, :major)
 end
