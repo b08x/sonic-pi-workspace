@@ -36,7 +36,7 @@ end
 live_loop :chord_progression do
   current_key = "C" # Start with the key of C
   8.times do
-    play_chord current_key
+    play_thing current_key
     sleep 1
     current_key = switch_key(current_key) # Switch to a new key
   end
