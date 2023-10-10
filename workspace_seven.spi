@@ -52,7 +52,7 @@ end
 
 # Example usage: play a chord progression with key changes
 live_loop :chord_progression do
-  current_key = "C" # Start with the key of C
+  current_key = "A" # Start with the key of C
   8.times do
     play_syncopated_chord current_key
     sleep 0.1
