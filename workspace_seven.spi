@@ -28,10 +28,10 @@ end
 
 # Method to play a chord based on the current key
 define :play_thing do |key|
-  notes = [key_to_note[key], key_to_note[key] + 4, key_to_note[key] + 7].to_ring.reflect(2)
+  notes = [key_to_note[key], key_to_note[key] + 4, key_to_note[key] + 7]
   notes.each do |note|
     play note
-    sleep 0.5
+    sleep 0.125
   end
   
 end
