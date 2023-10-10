@@ -22,7 +22,7 @@ live_loop :kik do
   2.times do
     #sample :bd_haus
     #sample COLLECTIONS, "RC_Kick_01_DurtyC", amp: 1.5
-    sample "/home/b08x/Library/sounds/jams/ai_jams/eclectic_acoustic_hip_hop_polyrhymthmic_beats.ogg", onset: 1
+    sample "/home/b08x/Library/sounds/jams/ai_jams/eclectic_acoustic_hip_hop_polyrhymthmic_beats.ogg", onset: (range 1, 5)
     sleep 0.25
   end
 end
