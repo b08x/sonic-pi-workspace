@@ -1,5 +1,8 @@
 # Welcome to Sonic Pi
 # Define the keys and their transition probabilities using a Markov chain
+use_bpm 60
+
+
 key_transitions = {
   "C" => { "C" => 0.2, "D" => 0.3, "E" => 0.2, "F" => 0.1, "G" => 0.1, "A" => 0.1 },
   "D" => { "C" => 0.1, "D" => 0.2, "E" => 0.3, "F" => 0.1, "G" => 0.2, "A" => 0.1 },
@@ -47,7 +50,7 @@ end
 
 # Example usage: play a chord progression with key changes for multiple voices
 live_loop :chord_progression do
-  current_key = "A" # Start with the key of A for the first voice
+  current_key = "C" # Start with the key of A for the first voice
   8.times do
     play_syncopated_chord current_key
     sleep 1
