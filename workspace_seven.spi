@@ -1,5 +1,5 @@
 # Welcome to Sonic Pi
-
+use_bpm 120
 # Define the keys and their transition probabilities using a Markov chain
 key_transitions = {
   "C" => { "C" => 0.2, "D" => 0.3, "E" => 0.2, "F" => 0.1, "G" => 0.1, "A" => 0.1 },
