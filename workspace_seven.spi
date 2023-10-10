@@ -30,7 +30,7 @@ end
 
 define :play_thing do |key|
   notes = [key_to_note[key], key_to_note[key] + 4, key_to_note[key] + 7]
-
+  
   notes.each do |note|
     play note, release: 0.3
     sleep 0.25
@@ -55,7 +55,7 @@ live_loop :chord_progression do
   current_key = "C" # Start with the key of C
   8.times do
     play_syncopated_chord current_key
-    sleep 1
+    sleep 0.1
     current_key = switch_key(current_key) # Switch to a new key
   end
 end
