@@ -40,12 +40,12 @@ end
 define :play_thing do |key|
   # Define a simple major chord
   notes = [key_to_note[key], key_to_note[key] + 4, key_to_note[key] + 7]
-  
+  play notes
   # Play the chord notes in different octaves
-  notes.each do |note|
-    play note, release: 0.3
-    sleep 0.1
-  end
+  #notes.each do |note|
+  #  play note, release: 0.3
+  #  sleep 0.1
+  #end
 end
 
 # Example usage: play a chord progression with key changes for multiple voices
