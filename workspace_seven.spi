@@ -29,9 +29,15 @@ end
 # Method to play a chord based on the current key
 define :play_thing do |key|
   notes = [key_to_note[key], key_to_note[key] + 4, key_to_note[key] + 7] # Simple major chord
-  play notes
+  notes.each do |note|
+    play note
+    sleep 0.5
+  end
+  
 end
+# e.g. arpeggiate [4,2,3], :d3, :major, [0,1,2,3,4], 4
 
+arpeggiate [], tonic, mode, [], reps
 # Example usage: play a chord progression with key changes
 live_loop :chord_progression do
   current_key = "C" # Start with the key of C
