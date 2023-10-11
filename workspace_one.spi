@@ -19,11 +19,13 @@ end
 
 live_loop :kik do
   sync :beat
-  use_random_seed 3423432
   4.times do
     #sample :bd_haus
     #sample COLLECTIONS, "RC_Kick_01_DurtyC", amp: 1.5
-    sample "/home/b08x/Library/sounds/jams/ai_jams/eclectic_acoustic_hip_hop_polyrhymthmic_beats.ogg", beat_stretch: 4, num_slices: 16, slice: pick
-    sleep 0.25
+    2.times do
+      sample "/home/b08x/Library/sounds/jams/ai_jams/eclectic_acoustic_hip_hop_polyrhymthmic_beats.ogg", onset: (range 5, 16).tick, amp: 2.5, beat_stretch: 4, release: 0.5
+      sleep 0.5
+    end
+    sleep 0.125
   end
 end
