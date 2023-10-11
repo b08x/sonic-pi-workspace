@@ -2,9 +2,9 @@
 
 use_bpm 86
 
-#arpeggiate [4,2,3], :fs3, :minor7, [0,1], 4
+arpeggiate [4,2,3], :fs3, :blues_minor, [0,1], 4
 
-print scale_names
+
 
 with_fx :echo, phase: 0.25, mix: 0.2 do
   live_loop :plips do
