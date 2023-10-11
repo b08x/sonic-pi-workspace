@@ -46,6 +46,7 @@ live_loop :chord do
 end
 
 live_loop :chord2 do
+  stop
   sync :chord
   use_synth :piano
   use_octave -2
