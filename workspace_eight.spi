@@ -65,6 +65,7 @@ live_loop :chord_progression do
 end
 
 live_loop :second_voice do
+  use_octave -2
   pattern = [nil, nil, "E", "A", "A", "G", "B", "A"] # Second voice pattern
   pattern.each do |note|
     if note
