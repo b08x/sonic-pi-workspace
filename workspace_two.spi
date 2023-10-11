@@ -21,6 +21,8 @@ live_loop :beat do
       cutoff: (line low,high,steps: 16).mirror.look, onset: (range 1, 16).choose
     sleep 0.25
   end
+  
+  sleep 0.25
 end
 
 in_thread do #control cutoff
