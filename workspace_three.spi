@@ -38,10 +38,7 @@ live_loop :chord do
   sync :riff
   use_synth :piano
   
-  chord(:fs3, :m7).each do |note|
-    play note
-    sleep 0.25
-  end
+  play (ring :fs4,:fs5,:fs4,:fs5,:cs5,:r,:e5,:cs5,:fs5,:r,:fs5,:cs5,:a5,:r,:r,:r).tick
   
 end
 # e.g. arpeggiate [4,2,3], :d3, :major, [0,1,2,3,4], 4
