@@ -5,12 +5,14 @@ use_sample_bpm :loop_electric
 
 with_fx :slicer, pulse_width: 0.75, phase: 0.315, wave: 1, smooth: 0.1 do
   live_loop :beat do
+    stop
     sample :loop_electric, amp: 0.7
     sleep 1
   end
 end
 
 live_loop :hatz do
+  stop
   use_synth_defaults amp: 0.6, sustain: 0, release: 0.05
   synth :cnoise, cutoff: 100 if one_in(4)
   synth :pnoise, cutoff: 110, decay: 0.01 if one_in(6)
@@ -18,7 +20,7 @@ live_loop :hatz do
 end
 
 live_loop :kik do
-  sync :hatz
+  #sync :hatz
   4.times do
     #sample :bd_haus
     #sample COLLECTIONS, "RC_Kick_01_DurtyC", amp: 1.5
