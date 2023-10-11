@@ -2,7 +2,7 @@
 use_bpm :link
 set_link_bpm! 90
 # Step 1: Choose Chords with Variation
-chords = [(chord :C, :major),
+chords = [(chord :D, :minor),
           (chord :A, :minor),
           (chord :E, :minor7).take(3),  # Added variation - minor 7th chord
           (chord :F, :maj9).take(3)]    # Added variation - major 9th chord
