@@ -1,5 +1,11 @@
 # Welcome to Sonic Pi
 # Define the keys and their transition probabilities using a Markov chain
+
+# use Markov chains to generate methods for switching keys in a Sonic Pi composition
+# adjust to create a syncopated variation of octaves
+# adjust to include multiple voices:
+# First voice' A-B-E-F-C(up octacve)-D-A(down octave). Second voice (rest)-E-A-A-G-B-A. Third voice (rest)-(rest)-C-D-E-G-C
+
 use_bpm 60
 
 
