@@ -13,7 +13,7 @@ live_loop :beat do
   tick
   2.times do
     sample :bd_klub
-    sleep 0.5
+    sleep 0.25
   end
   
   sample (knit :glitch_robot1,3,:glitch_robot2,1).look,
