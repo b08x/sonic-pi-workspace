@@ -19,6 +19,7 @@ end
 
 live_loop :riff do
   #stop
+  sync :plips
   use_synth :beep
   use_octave -1
   use_synth_defaults sustain: 0, release: 0.3, amp: 0.8
