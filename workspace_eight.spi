@@ -45,7 +45,7 @@ end
 # Method to play a chord based on the current key
 define :play_thing do |key|
   # Define a simple major chord
-  notes = [key_to_note[key], key_to_note[key] + 4, key_to_note[key] + 7].reverse
+  notes = [key_to_note[key], key_to_note[key] + 4, key_to_note[key] + 6].reverse
   #play notes
   # Play the chord notes in different octaves
   2.times do
