@@ -46,12 +46,12 @@ live_loop :chord do
 end
 
 live_loop :chord2 do
-  sync :riff
+  sync :chord
   use_synth :piano
   use_octave -2
   use_synth_defaults sustain: 0, release: 0.3, amp: 0.8
   play (ring :d3,:d4,:a4,:d5,:d5,:r,:e5,:cs5,:fs5,:r,:fs5,:d5,:a5,:r,:r,:r).tick
-  sleep 0.25
+  sleep 0.125
   
 end
 
