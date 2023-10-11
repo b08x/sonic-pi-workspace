@@ -18,7 +18,7 @@ live_loop :snare do
 end
 
 live_loop :riff do
-  stop
+  #stop
   use_synth :beep
   use_octave -4
   use_synth_defaults sustain: 0, release: 0.3, amp: 0.8
