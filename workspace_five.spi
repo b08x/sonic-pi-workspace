@@ -19,7 +19,8 @@ live_loop :chord_sequence do
   with_fx :reverb, mix: 0.5 do
     rearranged_matrix.each do |row|
       # Apply Note Inversions for Variation
-      notes_with_variation = row.shuffle
+      #notes_with_variation = row.shuffle
+      notes_with_variation = row.reverse
       
       # Apply Rhythmic Variations for Variation
       rhythm_variation = [0.75, 0.5, 0.8, 0.25].choose
