@@ -1,5 +1,5 @@
 # Welcome to Sonic Pi
-use_bpm 120
+use_bpm 200
 
 live_loop :amen do
   stop
