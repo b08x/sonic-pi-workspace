@@ -12,6 +12,8 @@ chords = [(chord :C, :major),
 notes_matrix = chords.map { |chord| chord.to_a }
 min_distance_matrix = notes_matrix.transpose.map { |column| column.permutation.to_a.min_by { |perm| perm.each_cons(2).sum { |a, b| (a - b).abs } } }
 rearranged_matrix = min_distance_matrix.transpose
+
+
 # Step 3: Live Loop Rendering with Variation
 live_loop :chord_sequence do
   with_fx :reverb, mix: 0.5 do
@@ -20,7 +22,7 @@ live_loop :chord_sequence do
       notes_with_variation = row.shuffle
       
       # Apply Rhythmic Variations for Variation
-      rhythm_variation = [0.75, 0.5, 0.25].choose
+      rhythm_variation = [0.75, 0.5, 0.45].choose
       notes_with_variation.each do |note|
         use_octave -2
         synth :piano, note: note, release: 1.5, attack: 0.2
