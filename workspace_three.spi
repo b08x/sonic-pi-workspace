@@ -39,6 +39,7 @@ live_loop :chord do
   use_synth :piano
   
   play (ring :fs4,:fs5,:fs4,:fs5,:cs5,:r,:e5,:cs5,:fs5,:r,:fs5,:cs5,:a5,:r,:r,:r).tick
+  sleep 0.25
   
 end
 # e.g. arpeggiate [4,2,3], :d3, :major, [0,1,2,3,4], 4
