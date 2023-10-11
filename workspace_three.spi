@@ -38,6 +38,7 @@ live_loop :riff do
 end
 
 live_loop :chord do
+  stop
   sync :riff
   use_synth :piano
   use_octave -2
