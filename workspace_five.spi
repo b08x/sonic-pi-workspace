@@ -1,16 +1,19 @@
 # Welcome to Sonic Pi
 use_bpm :link
 set_link_bpm! 90
+
 # Step 1: Choose Chords with Variation
 chords = [(chord :D, :minor),
           (chord :A, :minor),
           (chord :E, :minor7).take(3),  # Added variation - minor 7th chord
           (chord :F, :maj9).take(3)]    # Added variation - major 9th chord
 
-# Step 2: Create and Rearrange Matrix (Similar to Previous Script)
+
 # Step 2: Create and Rearrange Matrix
 notes_matrix = chords.map { |chord| chord.to_a }
+
 min_distance_matrix = notes_matrix.transpose.map { |column| column.permutation.to_a.min_by { |perm| perm.each_cons(2).sum { |a, b| (a - b).abs } } }
+
 rearranged_matrix = min_distance_matrix.transpose
 
 
@@ -18,7 +21,8 @@ rearranged_matrix = min_distance_matrix.transpose
 live_loop :chord_sequence do
   with_fx :reverb, mix: 0.5 do
     rearranged_matrix.each do |row|
-      # Apply Note Inversions for Variation
+      
+      #Apply Note Inversions for Variation    
       #notes_with_variation = row.shuffle
       notes_with_variation = row.ring.mirror
       
