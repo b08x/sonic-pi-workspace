@@ -1,5 +1,6 @@
 # Welcome to Sonic Pi
-use_bpm 89
+use_bpm 120
+
 live_loop :amen do
   stop
   #sample :loop_amen, beat_stretch: 2, amp: 0.75
