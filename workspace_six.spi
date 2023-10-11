@@ -1,7 +1,7 @@
 # Welcome to Sonic Pi
 
 live_loop :amen do
-  #stop
+  stop
   #sample :loop_amen, beat_stretch: 2, amp: 0.75
   sample :loop_amen, beat_stretch: 8, amp: 0.75, start: 0.25
   #sample :loop_amen, beat_stretch: 4, amp: 0.75, start: 0, finish: 0.25
