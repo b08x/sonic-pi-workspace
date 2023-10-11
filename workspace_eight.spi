@@ -78,6 +78,7 @@ live_loop :second_voice do
 end
 
 live_loop :third_voice do
+  use_octave -1
   pattern = [nil, nil, nil, "C", "D", "E", "G", "C"] # Third voice pattern
   pattern.each do |note|
     if note
