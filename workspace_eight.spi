@@ -50,7 +50,7 @@ define :play_thing do |key|
   # Play the chord notes in different octaves
   notes.each do |note|
     play note, release: 0.3
-    sleep 0.1
+    sleep 0.25
   end
 end
 
