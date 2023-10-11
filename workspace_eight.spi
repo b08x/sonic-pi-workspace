@@ -6,7 +6,7 @@
 # adjust to include multiple voices:
 # First voice' A-B-E-F-C(up octacve)-D-A(down octave). Second voice (rest)-E-A-A-G-B-A. Third voice (rest)-(rest)-C-D-E-G-C
 
-use_bpm 60
+use_bpm 89
 
 
 key_transitions = {
@@ -65,7 +65,7 @@ live_loop :chord_progression do
 end
 
 live_loop :second_voice do
-  use_octave -2
+  use_octave -1
   pattern = [nil, nil, "E", "A", "A", "G", "B", "A"] # Second voice pattern
   pattern.each do |note|
     if note
