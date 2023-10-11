@@ -2,6 +2,8 @@
 
 use_bpm 86
 
+use_synth :piano
+
 arpeggiate [4,2,7], :a3, :major_pentatonic, [0,3], 4
 
 sleep 2
