@@ -17,7 +17,7 @@ with_fx :echo, phase: 0.25, mix: 0.2 do
   end
 end
 
-live_loop :snare do
+live_loop :bass do
   #stop
   sync :plips
   sample :bd_boom, amp: 0.9 if (ring 1,0,1,0,0,0,0,0).tick == 1
