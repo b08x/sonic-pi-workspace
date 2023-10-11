@@ -4,7 +4,9 @@ use_bpm 86
 
 
 
-#arpeggiate [4,2,1], :a3, :major_pentatonic, [0,3], 4
+arpeggiate [4,2,1], :a3, :major_pentatonic, [0,3], 4
+
+sleep 2
 
 
 
