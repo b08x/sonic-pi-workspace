@@ -31,6 +31,7 @@ live_loop :chord_sequence do
 end
 
 live_loop :spatial_effects do
+  stop
   with_fx :pan, pan: calculate_pan(tick), amp: 0.8 do
     rearranged_matrix.each do |row|
       lfo_value = Math.sin(2 * Math::PI * 0.25 * tick)
