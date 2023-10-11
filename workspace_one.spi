@@ -21,7 +21,7 @@ end
 
 live_loop :kik do
   #sync :hatz
-  4.times do
+  16.times do
     #sample :bd_haus
     #sample COLLECTIONS, "RC_Kick_01_DurtyC", amp: 1.5
     8.times do
