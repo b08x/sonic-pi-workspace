@@ -48,44 +48,47 @@ define :play_thing do |key|
   notes = [key_to_note[key], key_to_note[key] + 4, key_to_note[key] + 7]
   #play notes
   # Play the chord notes in different octaves
-  notes.each do |note|
-    play note, release: 0.3
-    sleep 0.25
-  end
-end
-
-# Example usage: play a chord progression with key changes for multiple voices
-live_loop :chord_progression do
-  current_key = "C" # Start with the key of A for the first voice
-  8.times do
-    play_syncopated_chord current_key
-    sleep 1
-    current_key = switch_key(current_key) # Switch to a new key
-  end
-end
-
-live_loop :second_voice do
-  use_octave -1
-  pattern = [nil, nil, "E", "A", "A", "G", "B", "A"] # Second voice pattern
-  pattern.each do |note|
-    if note
-      play key_to_note[note], release: 0.3
-    else
+  2.times do
+    notes.each do |note|
+      play note, release: 0.3
       sleep 0.25
     end
-    sleep 0.5
-  end
-end
-
-live_loop :third_voice do
-  use_octave 0
-  pattern = [nil, nil, nil, "C", "D", "E", "G", "C"] # Third voice pattern
-  pattern.each do |note|
-    if note
-      play key_to_note[note], release: 0.3
-    else
-      sleep 0.25
     end
-    sleep 0.5
   end
-end
+  
+  # Example usage: play a chord progression with key changes for multiple voices
+  live_loop :chord_progression do
+    current_key = "C" # Start with the key of A for the first voice
+    8.times do
+      play_syncopated_chord current_key
+      sleep 1
+      current_key = switch_key(current_key) # Switch to a new key
+    end
+  end
+  
+  live_loop :second_voice do
+    use_octave -1
+    pattern = [nil, nil, "E", "A", "A", "G", "B", "A"] # Second voice pattern
+    pattern.each do |note|
+      if note
+        play key_to_note[note], release: 0.3
+      else
+        sleep 0.25
+      end
+      sleep 0.5
+    end
+  end
+  
+  live_loop :third_voice do
+    use_octave 0
+    pattern = [nil, nil, nil, "C", "D", "E", "G", "C"] # Third voice pattern
+    pattern.each do |note|
+      if note
+        play key_to_note[note], release: 0.3
+      else
+        sleep 0.25
+      end
+      sleep 0.5
+    end
+  end
+  
