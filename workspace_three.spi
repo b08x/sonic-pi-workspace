@@ -2,7 +2,7 @@
 
 use_bpm 86
 
-use_synth :piano
+use_synth :bass_foundation
 
 arpeggiate [4,2,7], :a3, :major_pentatonic, [0,3], 4
 
