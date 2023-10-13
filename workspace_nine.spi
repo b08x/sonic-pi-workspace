@@ -1,4 +1,5 @@
 # Blit2 - Bandlimited impulse train oscillator
+use_bpm 30
 hi = [0, 2, 4, 7, 9, 11]
 reverb_mix = 0.05
 
