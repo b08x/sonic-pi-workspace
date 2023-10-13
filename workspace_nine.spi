@@ -5,6 +5,7 @@ hi = [0, 2, 4, 7, 9, 11]
 reverb_mix = 0.05
 
 live_loop :something do
+  use_random_seed 878784
   16.times do
     # frequency
     freq = 33 + (rand(4) * 12) + hi.choose
@@ -21,7 +22,6 @@ live_loop :something do
     
     # advance time for key off
     sleep 0.005
-  end  
-    
   end
   
+end
