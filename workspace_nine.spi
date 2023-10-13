@@ -23,6 +23,8 @@ live_loop :something do
     
     # advance time for key off
     sleep 0.005
+    
+    sleep 0.125
   end
   
 end
