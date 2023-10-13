@@ -16,7 +16,6 @@ loop do
   sleep 0.12
   
   # key off
-  control synth, amp: 0.0
   
   # advance time for key off
   sleep 0.005
