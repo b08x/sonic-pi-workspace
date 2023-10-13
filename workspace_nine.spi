@@ -15,7 +15,7 @@ live_loop :something do
     harmonics = rand(1..5)
     
     # key on
-    synth :beep, note: freq, attack: 0.005, sustain: 0.0, release: 0.005, amp: 1.0, cutoff: harmonics * 1000
+    synth :pluck, note: freq, attack: 0.005, sustain: 0.0, release: 0.005, amp: 1.0, cutoff: harmonics * 1000
     
     # advance time for key on
     sleep 0.12
