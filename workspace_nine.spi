@@ -4,7 +4,7 @@ use_bpm 45
 hi = [0, 2, 4, 7, 9, 11]
 reverb_mix = 0.05
 
-loop do
+live_loop :something do
   # frequency
   freq = 33 + (rand(4) * 12) + hi.choose
   
@@ -17,8 +17,7 @@ loop do
   # advance time for key on
   sleep 0.12
   
-  # key off
-  
+ 
   # advance time for key off
   sleep 0.005
 end
