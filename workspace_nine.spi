@@ -5,7 +5,7 @@ hi = [0, 2, 4, 7, 9, 11]
 reverb_mix = 0.05
 
 live_loop :something do
-  use_octave 1
+  use_octave 0
   use_random_seed 878784
   16.times do
     # frequency
