@@ -1,10 +1,17 @@
 # Blit2 - Bandlimited impulse train oscillator
 blip = play 0, amp: 0.5
-adsr = [5.0, 3.0, 0.5, 5.0] # ADSR envelope parameters
-reverb_mix = 0.05
+
+# ADSR envelope parameters
+attack_time = 0.005
+decay_time = 0.003
+sustain_level = 0.5
+release_time = 0.005
 
 # set adsr
-control blip, attack: adsr[0], decay: adsr[1], sustain: adsr[2], release: adsr[3]
+control blip, attack: attack_time, decay: decay_time, sustain: sustain_level, release: release_time
+
+# reverb mix
+reverb_mix = 0.05
 
 # an array
 hi = [0, 2, 4, 7, 9, 11]
@@ -20,9 +27,10 @@ loop do
   control blip, harmonics: harmonics
   
   # key on
-  sleep adsr[0] # advance time for key on
+  control blip, amp: 1.0
+  sleep attack_time
   
   # key off
   control blip, amp: 0.0
-  sleep adsr[3] # advance time for key off
+  sleep release_time
 end
