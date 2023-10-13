@@ -22,7 +22,7 @@ live_loop :chord_sequence do
   with_fx :reverb, mix: 0.5 do
     rearranged_matrix.each do |row|
       
-      #Apply Note Inversions for Variation    
+      #Apply Note Inversions for Variation
       #notes_with_variation = row.shuffle
       notes_with_variation = row.ring.mirror
       
